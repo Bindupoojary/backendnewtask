@@ -1,0 +1,4 @@
+administer response configuration:
+  title: 'Administer response configuration'
+  description: 'Optional description.'
+  restrict access: true

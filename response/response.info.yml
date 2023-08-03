@@ -1,0 +1,5 @@
+name: response
+type: module
+description: response task
+package: Custom
+core_version_requirement: ^9 || ^10

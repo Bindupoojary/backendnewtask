@@ -1,0 +1,15 @@
+integertask.example:
+  path: '/integertask/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\integertask\Controller\IntegertaskController::build'
+  requirements:
+    _permission: 'access content'
+
+integertask.settings_form:
+  path: '/admin/config/system/integertask'
+  defaults:
+    _title: 'integertask settings'
+    _form: 'Drupal\integertask\Form\SettingsForm'
+  requirements:
+    _permission: 'administer integertask configuration'

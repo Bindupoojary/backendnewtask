@@ -1,0 +1,6 @@
+response.settings_form:
+  title: 'response'
+  description: 'Configure response.'
+  parent: system.admin_config_system
+  route_name: response.settings_form
+  weight: 10

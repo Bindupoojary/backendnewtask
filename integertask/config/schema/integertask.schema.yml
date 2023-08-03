@@ -1,0 +1,8 @@
+# Schema for the configuration files of the integertask module.
+integertask.settings:
+  type: config_object
+  label: 'integertask settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'

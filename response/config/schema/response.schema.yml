@@ -1,0 +1,8 @@
+# Schema for the configuration files of the response module.
+response.settings:
+  type: config_object
+  label: 'response settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'
