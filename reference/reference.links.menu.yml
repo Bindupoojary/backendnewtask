@@ -1,0 +1,6 @@
+reference.settings_form:
+  title: 'reference'
+  description: 'Configure reference.'
+  parent: system.admin_config_system
+  route_name: reference.settings_form
+  weight: 10

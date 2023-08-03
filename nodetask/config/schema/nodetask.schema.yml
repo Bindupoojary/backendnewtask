@@ -1,0 +1,8 @@
+# Schema for the configuration files of the nodetask module.
+nodetask.settings:
+  type: config_object
+  label: 'nodetask settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'

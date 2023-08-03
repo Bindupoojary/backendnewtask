@@ -1,0 +1,6 @@
+demo.settings_form:
+  title: 'demo'
+  description: 'Configure demo.'
+  parent: system.admin_config_system
+  route_name: demo.settings_form
+  weight: 10
