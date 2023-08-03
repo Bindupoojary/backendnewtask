@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for templatetask module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function templatetask_theme($existing, $type, $theme, $path) {
+  return [
+    'templatetask_new' => [
+      'variables' => [
+        'text' => "",
+        'title' => "",
+        'color' => "",
+      ],
+    ],
+  ];
+}
+
+

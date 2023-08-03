@@ -1,0 +1,15 @@
+templatetask.example:
+  path: '/templatetask/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\templatetask\Controller\TemplatetaskController::build'
+  requirements:
+    _permission: 'access content'
+
+templatetask.settings_form:
+  path: '/admin/config/system/templatetask'
+  defaults:
+    _title: 'templatetask settings'
+    _form: 'Drupal\templatetask\Form\SettingsForm'
+  requirements:
+    _permission: 'administer templatetask configuration'

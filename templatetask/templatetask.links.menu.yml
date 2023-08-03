@@ -1,0 +1,6 @@
+templatetask.settings_form:
+  title: 'templatetask'
+  description: 'Configure templatetask.'
+  parent: system.admin_config_system
+  route_name: templatetask.settings_form
+  weight: 10

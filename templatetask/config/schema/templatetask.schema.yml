@@ -1,0 +1,8 @@
+# Schema for the configuration files of the templatetask module.
+templatetask.settings:
+  type: config_object
+  label: 'templatetask settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'
