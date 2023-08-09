@@ -1,0 +1,4 @@
+administer moduletask configuration:
+  title: 'Administer moduletask configuration'
+  description: 'Optional description.'
+  restrict access: true

@@ -1,0 +1,8 @@
+# Schema for the configuration files of the cronmail module.
+cronmail.settings:
+  type: config_object
+  label: 'cronmail settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'

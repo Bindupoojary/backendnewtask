@@ -1,0 +1,73 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\State\StateInterface;
+use Drupal\node\NodeInterface;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Entity\EntityInterface;
+
+
+/**
+ * Implements hook_cron().
+ */
+function cronmail_cron() {
+  $last_cron_run = \Drupal::state()->get('lastcronrun');
+  $current_timestamp = \Drupal::time()->getRequestTime();
+
+
+  if (empty($last_cron_run) || ($current_timestamp - $last_cron_run) >= 1) {
+      $query = \Drupal::entityQuery('node')
+
+      ->condition('type', 'logs')
+      ->condition('created', $last_cron_run, '>')
+      ->accessCheck(FALSE);
+      $nodes = $query->execute();
+
+
+    foreach ($nodes as $node) {
+
+      $node = Node::load($node);
+        $token_content = ['node' => $node];
+        $config= \Drupal::config('custom_mailer.settings');
+
+
+        $token_service = \Drupal::token();
+        $subject = $token_service->replace($config->get('subject'), $token_content);
+        $message = $token_service->replace($config->get('message'), $token_content);
+
+        $mail_params = [
+          'subject' => $subject,
+          'body' => $message,
+        ];
+
+
+
+        $to = $node->get('field_email')->value;
+        $language_code = \Drupal::currentUser()->getPreferredLangcode();
+
+        \Drupal::service('plugin.manager.mail')->mail('cronmail', 'node_creation', $to, $language_code, $mail_params);
+      }
+    }
+
+
+
+
+
+  // Save the current timestamp as the last cron run time.
+  \Drupal::state()->set('lastcronrun', $current_timestamp);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function cronmail_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'node_creation':
+      $token_service = \Drupal::token();
+      $subject = $token_service->replace($params['subject'], ['node' => $params]);
+      $body = $token_service->replace($params['body'], ['node' => $params]);
+      $message['subject'] = $subject;
+      $message['body'][] = $body;
+      break;
+  }
+}

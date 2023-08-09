@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for moduletask module.
+ */
+
+/**
+ *
+ */
+function moduletask_theme() {
+  return [
+    'table_new' => [
+      'variables' => [
+        'rows' => '',
+      ],
+    ],
+  ];
+}

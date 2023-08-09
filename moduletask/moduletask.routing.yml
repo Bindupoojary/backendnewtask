@@ -1,0 +1,23 @@
+moduletask.example:
+  path: '/moduletask/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\moduletask\Controller\ModuletaskController::build'
+  requirements:
+    _permission: 'access content'
+
+moduletask.settings_form:
+  path: '/admin/config/system/moduletask'
+  defaults:
+    _title: 'moduletask settings'
+    _form: 'Drupal\moduletask\Form\SettingsForm'
+  requirements:
+    _permission: 'administer moduletask configuration'
+
+moduletask.custom_form:
+  path: '/moduletask'
+  defaults:
+    _title: 'moduletask settings'
+    _form: 'Drupal\moduletask\Form\CustomForm'
+  requirements:
+    _permission: 'administer moduletask configuration'
