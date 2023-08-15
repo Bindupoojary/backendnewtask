@@ -1,0 +1,15 @@
+advanced.example:
+  path: '/advanced/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\advanced\Controller\AdvancedController::build'
+  requirements:
+    _permission: 'access content'
+
+advanced.settings_form:
+  path: '/admin/config/system/advanced'
+  defaults:
+    _title: 'advanced settings'
+    _form: 'Drupal\advanced\Form\SettingsForm'
+  requirements:
+    _permission: 'administer advanced configuration'

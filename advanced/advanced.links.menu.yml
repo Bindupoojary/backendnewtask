@@ -1,0 +1,6 @@
+advanced.settings_form:
+  title: 'advanced'
+  description: 'Configure advanced.'
+  parent: system.admin_config_system
+  route_name: advanced.settings_form
+  weight: 10
