@@ -1,0 +1,49 @@
+demo.example:
+  path: '/demo/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\demo\Controller\DemoController::build'
+  requirements:
+    _permission: 'access content'
+
+demonew.example:
+  path: '/demonew/{nodeId}'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\demo\Controller\DemoNew::build'
+  requirements:
+    _permission: 'access content'
+
+demo.settings_form:
+  path: '/admin/config/system/demo'
+  defaults:
+    _title: 'demo settings'
+    _form: 'Drupal\demo\Form\SettingsForm'
+  requirements:
+    _permission: 'administer demo configuration'
+
+custom_node_details.details:
+  path: '/node/{node}/details'
+  defaults:
+    _controller: '\Drupal\demo\Controller\NodeDetailsController::build'
+    _title: 'Node Details'
+  requirements:
+    _permission: 'access custom node details'
+  options:
+    _admin_route: TRUE
+    parameters:
+      node:
+        type: entity:node
+
+custom_mailer.settings_form:
+  path: '/admin/config/demo/settings'
+  defaults:
+    _form: '\Drupal\demo\Form\CustomMailerSettingsForm'
+    _title: 'Custom Mailer Settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+
+
+
+
