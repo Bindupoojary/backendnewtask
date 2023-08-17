@@ -39,7 +39,7 @@ class NodetaskController extends ControllerBase {
    * Displays the form for node details.
    */
   public function build($node) {
-    $form = $this->formBuilder->getForm('\Drupal\demo\Form\NodeDetails', $node);
+    $form = $this->formBuilder->getForm('\Drupal\nodetask\Form\NodeDetails', $node);
     return $form;
   }
 

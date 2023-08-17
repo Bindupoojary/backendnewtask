@@ -1,15 +1,22 @@
 nodetask.example:
-  path: '/nodetask/example'
+  path: '/node/{node}/details'
   defaults:
     _title: 'Example'
     _controller: '\Drupal\nodetask\Controller\NodetaskController::build'
   requirements:
-    _permission: 'access content'
+    _permission: 'access permission for node details'
+  options:
+    _admin_route: TRUE
+    parameters:
+      node:
+        type: entity:node
 
-nodetask.settings_form:
-  path: '/admin/config/system/nodetask'
+node.settings_form:
+  path: '/admin/config/system/node'
   defaults:
     _title: 'nodetask settings'
-    _form: 'Drupal\nodetask\Form\SettingsForm'
+    _form: 'Drupal\nodetask\Form\NodeDetails'
   requirements:
     _permission: 'administer nodetask configuration'
+
+
