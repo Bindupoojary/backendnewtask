@@ -14,15 +14,3 @@ nodetask.settings_form:
   requirements:
     _permission: 'administer nodetask configuration'
 
-custom_node_details.details:
-  path: '/node/{node}/details'
-  defaults:
-    _controller: '\Drupal\demo\Controller\NodeDetailsController::build'
-    _title: 'Node Details'
-  requirements:
-    _permission: 'access custom node details'
-  options:
-    _admin_route: TRUE
-    parameters:
-      node:
-        type: entity:node
