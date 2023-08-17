@@ -1,4 +1,0 @@
-administer nodetask configuration:
-  title: 'Administer nodetask configuration'
-  description: 'Optional description.'
-  restrict access: true

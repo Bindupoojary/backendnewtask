@@ -1,9 +1,0 @@
-administer demo configuration:
-  title: 'Administer demo configuration'
-  description: 'Optional description.'
-  restrict access: true
-
-access custom node details:
-  title: 'Access Custom Node Details'
-  description: 'Allows users to access the node details form.'
-  restrict access: TRUE

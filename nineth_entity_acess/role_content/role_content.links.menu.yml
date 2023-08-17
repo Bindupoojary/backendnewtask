@@ -1,6 +1,0 @@
-role_content.settings_form:
-  title: 'role_content'
-  description: 'Configure role_content.'
-  parent: system.admin_config_system
-  route_name: role_content.settings_form
-  weight: 10

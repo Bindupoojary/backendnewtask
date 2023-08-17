@@ -1,4 +1,0 @@
-administer integertask configuration:
-  title: 'Administer integertask configuration'
-  description: 'Optional description.'
-  restrict access: true

@@ -1,4 +1,0 @@
-administer templatetask configuration:
-  title: 'Administer templatetask configuration'
-  description: 'Optional description.'
-  restrict access: true

@@ -1,6 +1,0 @@
-nodetask.settings_form:
-  title: 'nodetask'
-  description: 'Configure nodetask.'
-  parent: system.admin_config_system
-  route_name: nodetask.settings_form
-  weight: 10
