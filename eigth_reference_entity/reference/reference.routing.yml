@@ -6,19 +6,3 @@ reference.example:
   requirements:
     _permission: 'access content'
 
-
-referencenew.example:
-  path: '/demonew/{nodeId}'
-  defaults:
-    _title: 'Example'
-    _controller: '\Drupal\reference\Controller\ReferenceNew::build'
-  requirements:
-    _permission: 'access content'
-
-reference.settings_form:
-  path: '/admin/config/system/reference'
-  defaults:
-    _title: 'reference settings'
-    _form: 'Drupal\reference\Form\SettingsForm'
-  requirements:
-    _permission: 'administer reference configuration'
