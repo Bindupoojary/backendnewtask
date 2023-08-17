@@ -1,8 +1,11 @@
 <?php
 
+/**
+ * @file
+ * Short description.
+ */
+
 use Drupal\node\NodeInterface;
-
-
 
 /**
  * Implements hook_mail().
@@ -16,7 +19,6 @@ function demo_mail($key, &$message, $params) {
       $subject = \Drupal::token()
         ->replace($config->get('subject'), ['node' => $node]);
 
-
       $body = \Drupal::token()
         ->replace($config->get('message'), ['node' => $node]);
 
@@ -26,8 +28,6 @@ function demo_mail($key, &$message, $params) {
       break;
   }
 }
-
-
 
 /**
  * Implements hook_ENTITY_TYPE_insert().
@@ -39,7 +39,7 @@ function demo_node_insert(NodeInterface $node) {
   $result = \Drupal::service('plugin.manager.mail')
     ->mail('demo', 'node_creation_email', $to, $language, $params);
 
-  if ($result['result'] !== true) {
+  if ($result['result'] !== TRUE) {
     \Drupal::logger('demo')->error('Unable to send email on node creation: @error', ['@error' => $result['message']]);
     \Drupal::messenger()->addError(t('Unable to send email: @error', ['@error' => $result['message']]));
   }
@@ -48,20 +48,14 @@ function demo_node_insert(NodeInterface $node) {
   }
 }
 
-
-
-
 /**
- * implements hook_mail_alter()
+ * Implements hook_mail_alter().
  */
 function demo_mail_alter(&$message) {
 
   if ($message['key'] == 'node_creation_email') {
 
-	$message['headers']['Content-Type'] = 'text/html; charset=UTF-8; ';
+    $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; ';
 
-
-    }
+  }
 }
-
-

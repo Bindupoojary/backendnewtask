@@ -114,7 +114,8 @@ class SettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('custom_mailer.settings')
       ->set('subject', $form_state->getValue('subject'))
-      ->set('message', $form_state->getValue('message')) // Use ['value'] to get the formatted text
+    // Use ['value'] to get the formatted text.
+      ->set('message', $form_state->getValue('message'))
       ->save();
 
     $this->messenger->addStatus($this->t('Configuration saved successfully.'));

@@ -37,4 +37,5 @@ class NewFormatter extends FormatterBase {
     }
     return $elements;
   }
+
 }

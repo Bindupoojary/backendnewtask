@@ -19,5 +19,3 @@ function templatetask_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
-
-

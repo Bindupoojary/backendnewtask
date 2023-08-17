@@ -5,5 +5,3 @@ clonetask.example:
     _controller: '\Drupal\clonetask\Controller\ClonetaskController::cloneNode'
   requirements:
     _permission: 'access content'
-
-

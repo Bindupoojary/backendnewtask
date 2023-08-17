@@ -6,7 +6,7 @@
  */
 
 /**
- *
+ * Hook.
  */
 function moduletask_theme() {
   return [

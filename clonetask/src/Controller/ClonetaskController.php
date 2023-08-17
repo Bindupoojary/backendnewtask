@@ -71,8 +71,7 @@ class ClonetaskController extends NodeController {
    * @return array
    *   A node submission form.
    */
-  public function cloneNode() {
-    $node = Node::load(1);
+  public function cloneNode(Node $node) {
     if (!empty($node)) {
       $form = $this->entityFormBuilder()->getForm($node, 'quick_node_clone');
       return $form;

@@ -74,8 +74,6 @@ function demo_schema() {
     ],
   ];
 
-
-
   $schema['custom_node_dataa'] = [
     'description' => 'Custom table to store node form data.',
     'fields' => [
@@ -87,7 +85,8 @@ function demo_schema() {
       ],
       'user_id' => [
         'type' => 'varchar',
-        'length' => 255, // Set an appropriate length for the user_id field.
+      // Set an appropriate length for the user_id field.
+        'length' => 255,
         'not null' => TRUE,
         'description' => 'The ID of the associated user.',
       ],
@@ -97,9 +96,6 @@ function demo_schema() {
 
   return $schema;
 }
-
-
-
 
 /**
  * Implements hook_requirements().

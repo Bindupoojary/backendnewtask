@@ -14,8 +14,3 @@ custom_mailer.settings_form:
     _title: 'Custom Mailer Settings'
   requirements:
     _permission: 'administer site configuration'
-
-
-
-
-

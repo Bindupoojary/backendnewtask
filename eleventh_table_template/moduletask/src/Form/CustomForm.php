@@ -8,7 +8,7 @@ use Drupal\Core\Database\Connection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- *
+ * Class.
  */
 class CustomForm extends FormBase {
 

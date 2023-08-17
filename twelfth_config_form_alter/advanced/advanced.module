@@ -6,12 +6,12 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
- /**
-  * Hook.
-  */
 
-  function advanced_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-    if($form_id == 'node_article_form') {
+/**
+ * Hook.
+ */
+function advanced_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_article_form') {
 
     $config = \Drupal::config('advanced.settings');
     $config_data = $config->get();
@@ -22,16 +22,13 @@ use Drupal\Core\Form\FormStateInterface;
 
     $advanced = $config->get('advanced');
 
-    if($advanced == 1) {
+    if ($advanced == 1) {
       $form['field_advanced']['widget']['value']['#default_value'] = $advanced;
     }
 
     $tag_reference = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tag_value);
     $form['field_tags']['widget']['target_id']['#default_value'] = $tag_reference;
 
-    }
-
-
-
+  }
 
 }

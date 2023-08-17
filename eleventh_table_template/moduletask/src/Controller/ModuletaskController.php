@@ -21,23 +21,26 @@ class ModuletaskController extends ControllerBase {
    * Constructor.
    *
    * @param \Drupal\Core\Database\Connection $database
+   *   The database connection service.
    */
   public function __construct(Connection $database) {
     $this->database = $database;
   }
 
   /**
-   * @inhertdoc
+   * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('database')
     );
-
   }
 
   /**
    * Builds the response.
+   *
+   * @return array
+   *   A renderable array representing the content.
    */
   public function build() {
     $query = $this->database->select('moduletask_new', 'mn')
@@ -52,7 +55,6 @@ class ModuletaskController extends ControllerBase {
         'email' => $row->email,
         'phone_number' => $row->phone_number,
         'gender' => $row->gender,
-
       ];
     }
 
@@ -61,7 +63,6 @@ class ModuletaskController extends ControllerBase {
       '#rows' => $rows,
     ];
     return $build;
-
   }
 
 }
