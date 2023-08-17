@@ -1,0 +1,4 @@
+administer clonetask configuration:
+  title: 'Administer clonetask configuration'
+  description: 'Optional description.'
+  restrict access: true
