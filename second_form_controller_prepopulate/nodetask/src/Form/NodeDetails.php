@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Session\AccountProxyInterface;
 
 /**
  * Undocumented class.
@@ -28,16 +29,26 @@ class NodeDetails extends FormBase {
   protected $messenger;
 
   /**
+   * The current user service.
+   *
+   * @var \Drupal\Core\Session\AccountProxyInterface
+   */
+  protected $currentUser;
+
+  /**
    * Constructs a new NodeDetailsForm object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   The messenger service.
+   * @param \Drupal\Core\Session\AccountProxyInterface $current_user
+   *   The current user service.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, MessengerInterface $messenger) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, MessengerInterface $messenger, AccountProxyInterface $current_user) {
     $this->entityTypeManager = $entity_type_manager;
     $this->messenger = $messenger;
+    $this->currentUser = $current_user;
   }
 
   /**
@@ -46,7 +57,8 @@ class NodeDetails extends FormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('entity_type.manager'),
-      $container->get('messenger')
+      $container->get('messenger'),
+      $container->get('current_user')
     );
   }
 
@@ -63,7 +75,7 @@ class NodeDetails extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state, $node = NULL) {
     // Get the node and current user.
     $node_title = $node ? $node->getTitle() : '';
-    $user = \Drupal::currentUser();
+    $user = $this->currentUser;
 
     $form['title'] = [
       '#type' => 'textfield',
