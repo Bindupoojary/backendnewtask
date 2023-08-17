@@ -6,10 +6,4 @@ clonetask.example:
   requirements:
     _permission: 'access content'
 
-clonetask.settings_form:
-  path: '/admin/config/system/clonetask'
-  defaults:
-    _title: 'clonetask settings'
-    _form: 'Drupal\clonetask\Form\SettingsForm'
-  requirements:
-    _permission: 'administer clonetask configuration'
+
