@@ -24,7 +24,7 @@ class ClonetaskController extends NodeController {
   protected $qncEntityFormBuilder;
 
   /**
-   * Constructs a NodeController object.
+   * Constructs a ClonetaskController object.
    *
    * @param \Drupal\Core\Datetime\DateFormatterInterface $date_formatter
    *   The date formatter service.
@@ -53,20 +53,7 @@ class ClonetaskController extends NodeController {
   }
 
   /**
-   * Retrieves the entity form builder.
-   *
-   * @return \Drupal\quick_node_clone\Form\QuickNodeCloneFormBuilder
-   *   The entity form builder.
-   */
-  protected function entityFormBuilder() {
-    return $this->qncEntityFormBuilder;
-  }
-
-  /**
    * Provides the node submission form.
-   *
-   * @param \Drupal\node\Entity\Node $node
-   *   The node entity to clone.
    *
    * @return array
    *   A node submission form.

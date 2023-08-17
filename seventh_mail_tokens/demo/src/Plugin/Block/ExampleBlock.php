@@ -7,7 +7,8 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\EntityDisplayRepositoryInterface; // Import the interface for the missing service.
+// Import the interface for the missing service.
+use Drupal\Core\Entity\EntityDisplayRepositoryInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 
@@ -63,7 +64,8 @@ class ExampleBlock extends BlockBase implements ContainerFactoryPluginInterface 
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->configFactory = $config_factory;
     $this->entityTypeManager = $entity_type_manager;
-    $this->entityDisplayRepository = $entity_display_repository; // Store the service in the property.
+    // Store the service in the property.
+    $this->entityDisplayRepository = $entity_display_repository;
   }
 
   /**
@@ -76,7 +78,8 @@ class ExampleBlock extends BlockBase implements ContainerFactoryPluginInterface 
       $plugin_definition,
       $container->get('config.factory'),
       $container->get('entity_type.manager'),
-      $container->get('entity_display.repository') // Add this line to inject the missing service.
+    // Add this line to inject the missing service.
+      $container->get('entity_display.repository')
     );
   }
 
@@ -86,7 +89,8 @@ class ExampleBlock extends BlockBase implements ContainerFactoryPluginInterface 
   public function defaultConfiguration() {
     return [
       'example' => '',
-      'view_mode' => 'teaser', // Set the default view mode to 'teaser'.
+    // Set the default view mode to 'teaser'.
+      'view_mode' => 'teaser',
     ];
   }
 
@@ -149,4 +153,5 @@ class ExampleBlock extends BlockBase implements ContainerFactoryPluginInterface 
     }
     return $build;
   }
+
 }
