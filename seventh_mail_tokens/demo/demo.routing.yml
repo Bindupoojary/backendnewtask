@@ -1,12 +1,3 @@
-demo.settings_form:
-  path: '/admin/config/system/demo'
-  defaults:
-    _title: 'demo settings'
-    _form: 'Drupal\demo\Form\SettingsForm'
-  requirements:
-    _permission: 'administer demo configuration'
-
-
 custom_mailer.settings_form:
   path: '/admin/config/demo/settings'
   defaults:
