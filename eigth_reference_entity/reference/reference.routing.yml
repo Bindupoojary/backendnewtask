@@ -5,4 +5,3 @@ reference.example:
     _controller: '\Drupal\reference\Controller\ReferenceController::build'
   requirements:
     _permission: 'access content'
-

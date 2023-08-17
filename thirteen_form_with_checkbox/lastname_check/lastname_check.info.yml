@@ -1,0 +1,5 @@
+name: [A[A[B[Blastname_check
+type: module
+description: lastname check
+package: Custom
+core_version_requirement: ^9 || ^10

@@ -1,0 +1,7 @@
+lastname_custom.settings_form:
+  path: '/lastname'
+  defaults:
+    _title: 'lastname_check settings'
+    _form: 'Drupal\lastname_check\Form\CustomForm'
+  requirements:
+    _permission: 'administer lastname_check configuration'

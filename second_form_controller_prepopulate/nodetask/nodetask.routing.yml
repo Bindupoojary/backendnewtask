@@ -13,4 +13,3 @@ nodetask.settings_form:
     _form: 'Drupal\nodetask\Form\SettingsForm'
   requirements:
     _permission: 'administer nodetask configuration'
-
