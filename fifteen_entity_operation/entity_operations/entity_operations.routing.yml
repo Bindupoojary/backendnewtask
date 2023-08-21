@@ -1,0 +1,11 @@
+entity_operations.example:
+  path: '/node/{node}/title'
+  defaults:
+    _title: 'node title'
+    _controller: '\Drupal\entity_operations\Controller\EntityOperationsController::build'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node

@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+
+/**
+ * @file
+ * Primary module hooks for entity_operations module.
+ */
+
+/**
+ * Implements hook_entity_operation() for nodes.
+ */
+function entity_operations_entity_operation(EntityInterface $entity) {
+  $operations = [];
+
+  $operations['node title'] = [
+    'title' => t('node title'),
+    'weight' => '100',
+    'url' => Url::fromRoute('entity_operations.example', ['node' => $entity->id()]),
+  ];
+
+  return $operations;
+}
