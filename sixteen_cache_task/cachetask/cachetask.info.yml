@@ -1,0 +1,5 @@
+name: cachetask
+type: module
+description: cache task
+package: Custom
+core_version_requirement: ^9 || ^10

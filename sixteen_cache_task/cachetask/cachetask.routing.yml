@@ -1,0 +1,11 @@
+cache_task.example:
+  path: '/cachetask/{node}'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\cachetask\Controller\CacheTask::build'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Module.
+ */
+
+use Drupal\node\NodeInterface;
+use Drupal\Core\Cache\Cache;
+
+/**
+ * @file
+ * Primary module hooks for cachetask module.
+ */
+
+/**
+ * Implements hook_node_presave().
+ */
+function cachetask_node_presave(NodeInterface $node) {
+  $cid = 'markten:' . $node->id();
+  Cache::invalidateTags([$cid]);
+}
