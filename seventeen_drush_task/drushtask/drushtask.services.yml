@@ -1,0 +1,6 @@
+services:
+  drushtask.commands:
+    class: \Drupal\drushtask\Commands\CustomDrush
+    tags:
+      - { name: drush.command }
+    arguments: ['@messenger', '@state']
